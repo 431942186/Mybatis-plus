@@ -1,11 +1,9 @@
 package com.example.ch01;
 
 import com.example.ch01.vo.Dept;
-import org.jasypt.encryption.StringEncryptor;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @SpringBootTest
@@ -45,7 +43,7 @@ class DeptTests {
          * 实体类调用自己的方法进行数据更新
          */
         Dept dept = new Dept();
-        dept.setId(1);
+        dept.setId(1L);
         dept.setMobile("010-888-88888");
         boolean b = dept.updateById();
         System.out.println(b ? "更新成功" : "更新失败");
@@ -73,7 +71,7 @@ class DeptTests {
          */
 
         Dept dept = new Dept();
-//        dept.setId(1);
+        dept.setId(1L);
         List<Dept> list = dept.selectAll();
         list.forEach(System.out::println);
         Dept dept1 = dept.selectById();
